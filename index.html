@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>test acceleromètre</title>
+
+    <script src="https://unpkg.com/mathjs/lib/browser/math.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+
+    <script src="tds.js"></script>
+
+    <style>
+        .conteneurGraphe{
+            width: available;
+            height: 20cm;
+        }
+    </style>
+</head>
+<body>
+
+<div class="conteneurGraphe">
+<canvas id="acceleration" width="200" height="200"></canvas>
+</div>
+
+<div class="conteneurGraphe">
+    <canvas id="vitesse" width="200" height="200"></canvas>
+</div>
+
+<div class="conteneurGraphe">
+    <canvas id="position" width="200" height="200"></canvas>
+</div>
+
+<div class="conteneurGraphe">
+    <canvas id="fftacceleration" width="200" height="200"></canvas>
+</div>
+
+<script>
+
+    nbPoints = 65536;
+    var te = 0.1;
+    traitement = new TraiteurAcceleration(nbPoints, te);
+
+
+    for (var i = 0; i < nbPoints; i++) {
+        var x = 1.5 + 2 * Math.sin(2 * 3.14 * 1.5 * i * te) + 0*(2*Math.random()-1);
+        var y = 1 + 0*(2*Math.random()-1);
+        var z = -1.5 + 2 * Math.sin(2 * 3.14 * 0.05 * i * te) + 0*(2*Math.random()-1);
+        traitement.ajouterEchantillon( x, y, z );
+    }
+
+    var dbt = performance.now();
+
+    console.log(traitement.getAccelerationMoyenne("x"))
+    console.log(traitement.getAccelerationMoyenne("y"))
+    console.log(traitement.getAccelerationMoyenne("z"))
+    console.log(traitement.getAccelerationMoyenne("n"))
+
+    console.log(traitement.getVitesseMoyenne("x"))
+    console.log(traitement.getVitesseMoyenne("y"))
+    console.log(traitement.getVitesseMoyenne("z"))
+    console.log(traitement.getVitesseMoyenne("n"))
+
+    console.log(traitement.getPositionMoyenne("x"))
+    console.log(traitement.getPositionMoyenne("y"))
+    console.log(traitement.getPositionMoyenne("z"))
+    console.log(traitement.getPositionMoyenne("n"))
+
+
+    var fftAccX = traitement.getfftAcceleration("x");
+    var fftAccY = traitement.getfftAcceleration("y");
+    var fftAccZ = traitement.getfftAcceleration("z");
+    var fftAccNorme = traitement.getfftAcceleration("n");
+
+
+    var taille=16;
+
+    var resX = detectionPic(fftAccX[1],taille,0.35);
+    var resY = detectionPic(fftAccY[1],taille,0.35);
+    var resZ = detectionPic(fftAccZ[1],taille,0.35);
+    var resN = detectionPic(fftAccNorme[1],taille,0.35);
+
+    console.log(resX[2]);
+    console.log(resY[2]);
+    console.log(resZ[2]);
+    // console.log(resN[2]);
+
+    var picsx = traceTroncons( fftAccX[1].length, resX[1], taille);
+    var picsy = traceTroncons( fftAccY[1].length, resY[1], taille);
+    var picsz = traceTroncons( fftAccZ[1].length, resZ[1], taille);
+    var picsn = traceTroncons( fftAccNorme[1].length, resN[1], taille);
+
+
+    var fin = performance.now();
+
+    console.log("Temps traitement : ", fin - dbt);
+
+    //
+    // var ctxAcceleration = document.getElementById('acceleration').getContext('2d');
+    // var myChartAcc = new Chart(ctxAcceleration, {
+    //     type: 'line',
+    //     data: {
+    //         labels: traitement.getTempsAcceleration(),
+    //         datasets: [
+    //             {
+    //                 label: 'acceleration x',
+    //                 data: traitement.getAcceleration("x").enTableau(),
+    //                 borderWidth: 1,
+    //                 fill: false,
+    //                 pointRadius: 0,
+    //                 borderColor: "rgba(255,0,0,1)",
+    //             },
+    //             {
+    //                 label: 'acceleration y',
+    //                 data: traitement.getAcceleration("y").enTableau(),
+    //                 borderWidth: 1,
+    //                 fill: false,
+    //                 pointRadius: 0,
+    //                 borderColor: "rgba(0,255,0,1)",
+    //             },
+    //             {
+    //                 label: 'acceleration z',
+    //                 data: traitement.getAcceleration("z").enTableau(),
+    //                 borderWidth: 1,
+    //                 fill: false,
+    //                 pointRadius: 0,
+    //                 borderColor: "rgba(0,0,255,1)",
+    //             },
+    //             {
+    //                 label: 'acceleration norme',
+    //                 data: traitement.getAcceleration("n").enTableau(),
+    //                 borderWidth: 1,
+    //                 fill: false,
+    //                 pointRadius: 0,
+    //                 borderColor: "rgb(255,0,255)",
+    //             },
+    //         ]
+    //     },
+    //     options: {
+    //         responsive:true,
+    //         maintainAspectRatio: false,
+    //         scales: {
+    //             yAxes: [{
+    //                 ticks: {
+    //                     beginAtZero: true
+    //                 }
+    //             }]
+    //         }
+    //     }
+    // });
+    //
+    //
+    // var ctxVitesse = document.getElementById('vitesse').getContext('2d');
+    // var myChartVit = new Chart(ctxVitesse, {
+    //     type: 'line',
+    //     data: {
+    //         labels: traitement.getTempsVitesse(),
+    //         datasets: [
+    //             {
+    //                 label: 'vitesse x',
+    //                 data: traitement.getVitesse("x").enTableau(),
+    //                 borderWidth: 1,
+    //                 fill: false,
+    //                 pointRadius: 0,
+    //                 borderColor: "rgba(255,0,0,1)",
+    //             },
+    //             {
+    //                 label: 'vitesse y',
+    //                 data: traitement.getVitesse("y").enTableau(),
+    //                 borderWidth: 1,
+    //                 fill: false,
+    //                 pointRadius: 0,
+    //                 borderColor: "rgba(0,255,0,1)",
+    //             },
+    //             {
+    //                 label: 'vitesse z',
+    //                 data: traitement.getVitesse("z").enTableau(),
+    //                 borderWidth: 1,
+    //                 fill: false,
+    //                 pointRadius: 0,
+    //                 borderColor: "rgba(0,0,255,1)",
+    //             },
+    //             {
+    //                 label: 'vitesse norme',
+    //                 data: traitement.getVitesse("n").enTableau(),
+    //                 borderWidth: 1,
+    //                 fill: false,
+    //                 pointRadius: 0,
+    //                 borderColor: "rgb(255,0,255)",
+    //             }
+    //         ]
+    //     },
+    //     options: {
+    //         responsive:true,
+    //         maintainAspectRatio: false,
+    //         scales: {
+    //             yAxes: [{
+    //                 ticks: {
+    //                     beginAtZero: true
+    //                 }
+    //             }]
+    //         }
+    //     }
+    // });
+    //
+    //
+    // var ctxPosition = document.getElementById('position').getContext('2d');
+    // var myChartPos = new Chart(ctxPosition, {
+    //     type: 'line',
+    //     data: {
+    //         labels: traitement.getTempsPosition(),
+    //         datasets: [
+    //             {
+    //                 label: 'position x',
+    //                 data: traitement.getPosition("x").enTableau(),
+    //                 borderWidth: 1,
+    //                 fill: false,
+    //                 pointRadius: 0,
+    //                 borderColor: "rgba(255,0,0,1)",
+    //             },
+    //             {
+    //                 label: 'position y',
+    //                 data: traitement.getPosition("y").enTableau(),
+    //                 borderWidth: 1,
+    //                 fill: false,
+    //                 pointRadius: 0,
+    //                 borderColor: "rgba(0,255,0,1)",
+    //             },
+    //             {
+    //                 label: 'position z',
+    //                 data: traitement.getPosition("z").enTableau(),
+    //                 borderWidth: 1,
+    //                 fill: false,
+    //                 pointRadius: 0,
+    //                 borderColor: "rgba(0,0,255,1)",
+    //             },
+    //             {
+    //                 label: 'position norme',
+    //                 data: traitement.getPosition("n").enTableau(),
+    //                 borderWidth: 1,
+    //                 fill: false,
+    //                 pointRadius: 0,
+    //                 borderColor: "rgba(255,0,255,1)",
+    //             },
+    //         ]
+    //     },
+    //     options: {
+    //         responsive:true,
+    //         maintainAspectRatio: false,
+    //         scales: {
+    //             yAxes: [{
+    //                 ticks: {
+    //                     beginAtZero: true
+    //                 }
+    //             }]
+    //         }
+    //     }
+    // });
+    //
+    //
+    //
+    // var ctxFftAcc = document.getElementById('fftacceleration').getContext('2d');
+    // var myChartFftAcc = new Chart(ctxFftAcc, {
+    //     type: 'line',
+    //     data: {
+    //         labels: fftAccX[0],
+    //         datasets: [
+    //             {
+    //                 label: 'fft acceleration x',
+    //                 data: fftAccX[1],
+    //                 borderWidth: 1,
+    //                 fill: false,
+    //                 pointRadius: 0,
+    //                 borderColor: "rgba(255,0,0,1)",
+    //             },
+    //             {
+    //                 label: 'fft acceleration y',
+    //                 data: fftAccY[1],
+    //                 borderWidth: 1,
+    //                 fill: false,
+    //                 pointRadius: 0,
+    //                 borderColor: "rgba(0,255,0,1)",
+    //             },
+    //             {
+    //                 label: 'fft acceleration z',
+    //                 data: fftAccZ[1],
+    //                 borderWidth: 1,
+    //                 fill: false,
+    //                 pointRadius: 0,
+    //                 borderColor: "rgba(0,0,255,1)",
+    //             },
+    //             {
+    //                 label: 'fft acceleration norme',
+    //                 data: fftAccNorme[1],
+    //                 borderWidth: 1,
+    //                 fill: false,
+    //                 pointRadius: 0,
+    //                 borderColor: "rgba(255,0,255,1)",
+    //             },
+    //             {
+    //                 label: 'pics fft acceleration x',
+    //                 data: picsx,
+    //                 borderWidth: 1,
+    //                 fill: false,
+    //                 pointRadius: 0,
+    //                 borderColor: "rgb(21,128,10)",
+    //             },
+    //             {
+    //                 label: 'pics fft acceleration y',
+    //                 data: picsy,
+    //                 borderWidth: 1,
+    //                 fill: false,
+    //                 pointRadius: 0,
+    //                 borderColor: "rgb(0,234,255)",
+    //             },
+    //             {
+    //                 label: 'pics fft acceleration z',
+    //                 data: picsz,
+    //                 borderWidth: 1,
+    //                 fill: false,
+    //                 pointRadius: 0,
+    //                 borderColor: "rgb(255,140,0)",
+    //             },
+    //             {
+    //                 label: 'pics fft acceleration norme',
+    //                 data: picsn,
+    //                 borderWidth: 1,
+    //                 fill: false,
+    //                 pointRadius: 0,
+    //                 borderColor: "rgb(128,7,128)",
+    //             },
+    //         ]
+    //     },
+    //     options: {
+    //         responsive:true,
+    //         maintainAspectRatio: false,
+    //         scales: {
+    //             yAxes: [{
+    //                 ticks: {
+    //                     beginAtZero: true
+    //                 }
+    //             }]
+    //         }
+    //     }
+    // });
+
+</script>
+</body>
+</html>

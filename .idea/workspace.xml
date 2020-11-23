@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="fb296482-5ced-43a6-b3cb-f862b0ec0889" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+        <option value="package.json" />
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1kazWh6IBUx6cXrjOfE6DLUjsQg" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="restartRequiresConfirmation" value="false" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RunManager" selected="JavaScript Debug.index.html">
+    <configuration name="index.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/testJsAccelerometer/index.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <configuration name="tds.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/tds.js" working-dir="$PROJECT_DIR$">
+      <method v="2" />
+    </configuration>
+    <configuration name="testTraiteurAcceleration" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="testTraiteurAcceleration" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JavaScript Debug.index.html" />
+        <item itemvalue="npm.testTraiteurAcceleration" />
+        <item itemvalue="Node.js.tds.js" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="fb296482-5ced-43a6-b3cb-f862b0ec0889" name="Default Changelist" comment="" />
+      <created>1605953527505</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1605953527505</updated>
+      <workItem from="1605953529634" duration="34224000" />
+      <workItem from="1606034135411" duration="18888000" />
+      <workItem from="1606150509406" duration="383000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="1067" y="532" width="855" height="564" key="#Web_Browsers" timestamp="1605954560676">
+      <screen x="0" y="30" width="2560" height="1410" />
+    </state>
+    <state x="1067" y="532" width="855" height="564" key="#Web_Browsers/0.30.2560.1410@0.30.2560.1410" timestamp="1605954560676" />
+    <state x="744" y="408" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1605954805355">
+      <screen x="0" y="30" width="2560" height="1410" />
+    </state>
+    <state x="744" y="408" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.30.2560.1410@0.30.2560.1410" timestamp="1605954805355" />
+    <state x="1093" y="469" key="#com.intellij.ide.util.MemberChooser" timestamp="1605978498576">
+      <screen x="0" y="30" width="2560" height="1410" />
+    </state>
+    <state x="1093" y="469" key="#com.intellij.ide.util.MemberChooser/0.30.2560.1410@0.30.2560.1410" timestamp="1605978498576" />
+    <state x="1018" y="499" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1605964096694">
+      <screen x="0" y="30" width="2560" height="1410" />
+    </state>
+    <state x="1018" y="499" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.30.2560.1410@0.30.2560.1410" timestamp="1605964096694" />
+    <state x="1282" y="587" key="FileChooserDialogImpl" timestamp="1605953862218">
+      <screen x="0" y="30" width="2560" height="1410" />
+    </state>
+    <state x="1282" y="587" key="FileChooserDialogImpl/0.30.2560.1410@0.30.2560.1410" timestamp="1605953862218" />
+    <state width="2529" height="494" key="GridCell.Tab.0.bottom" timestamp="1606063839467">
+      <screen x="0" y="30" width="2560" height="1410" />
+    </state>
+    <state width="2529" height="494" key="GridCell.Tab.0.bottom/0.30.2560.1410@0.30.2560.1410" timestamp="1606063839467" />
+    <state width="2529" height="494" key="GridCell.Tab.0.center" timestamp="1606063839465">
+      <screen x="0" y="30" width="2560" height="1410" />
+    </state>
+    <state width="2529" height="494" key="GridCell.Tab.0.center/0.30.2560.1410@0.30.2560.1410" timestamp="1606063839465" />
+    <state width="2529" height="494" key="GridCell.Tab.0.left" timestamp="1606063839464">
+      <screen x="0" y="30" width="2560" height="1410" />
+    </state>
+    <state width="2529" height="494" key="GridCell.Tab.0.left/0.30.2560.1410@0.30.2560.1410" timestamp="1606063839464" />
+    <state width="2529" height="494" key="GridCell.Tab.0.right" timestamp="1606063839466">
+      <screen x="0" y="30" width="2560" height="1410" />
+    </state>
+    <state width="2529" height="494" key="GridCell.Tab.0.right/0.30.2560.1410@0.30.2560.1410" timestamp="1606063839466" />
+    <state width="2529" height="494" key="GridCell.Tab.1.bottom" timestamp="1606063839469">
+      <screen x="0" y="30" width="2560" height="1410" />
+    </state>
+    <state width="2529" height="494" key="GridCell.Tab.1.bottom/0.30.2560.1410@0.30.2560.1410" timestamp="1606063839469" />
+    <state width="2529" height="494" key="GridCell.Tab.1.center" timestamp="1606063839468">
+      <screen x="0" y="30" width="2560" height="1410" />
+    </state>
+    <state width="2529" height="494" key="GridCell.Tab.1.center/0.30.2560.1410@0.30.2560.1410" timestamp="1606063839468" />
+    <state width="2529" height="494" key="GridCell.Tab.1.left" timestamp="1606063839468">
+      <screen x="0" y="30" width="2560" height="1410" />
+    </state>
+    <state width="2529" height="494" key="GridCell.Tab.1.left/0.30.2560.1410@0.30.2560.1410" timestamp="1606063839468" />
+    <state width="2529" height="494" key="GridCell.Tab.1.right" timestamp="1606063839469">
+      <screen x="0" y="30" width="2560" height="1410" />
+    </state>
+    <state width="2529" height="494" key="GridCell.Tab.1.right/0.30.2560.1410@0.30.2560.1410" timestamp="1606063839469" />
+    <state width="2529" height="494" key="GridCell.Tab.2.bottom" timestamp="1606063839471">
+      <screen x="0" y="30" width="2560" height="1410" />
+    </state>
+    <state width="2529" height="494" key="GridCell.Tab.2.bottom/0.30.2560.1410@0.30.2560.1410" timestamp="1606063839471" />
+    <state width="2529" height="494" key="GridCell.Tab.2.center" timestamp="1606063839470">
+      <screen x="0" y="30" width="2560" height="1410" />
+    </state>
+    <state width="2529" height="494" key="GridCell.Tab.2.center/0.30.2560.1410@0.30.2560.1410" timestamp="1606063839470" />
+    <state width="2529" height="494" key="GridCell.Tab.2.left" timestamp="1606063839470">
+      <screen x="0" y="30" width="2560" height="1410" />
+    </state>
+    <state width="2529" height="494" key="GridCell.Tab.2.left/0.30.2560.1410@0.30.2560.1410" timestamp="1606063839470" />
+    <state width="2529" height="494" key="GridCell.Tab.2.right" timestamp="1606063839471">
+      <screen x="0" y="30" width="2560" height="1410" />
+    </state>
+    <state width="2529" height="494" key="GridCell.Tab.2.right/0.30.2560.1410@0.30.2560.1410" timestamp="1606063839471" />
+    <state width="2529" height="494" key="GridCell.Tab.3.bottom" timestamp="1606063839475">
+      <screen x="0" y="30" width="2560" height="1410" />
+    </state>
+    <state width="2529" height="494" key="GridCell.Tab.3.bottom/0.30.2560.1410@0.30.2560.1410" timestamp="1606063839475" />
+    <state width="2529" height="494" key="GridCell.Tab.3.center" timestamp="1606063839473">
+      <screen x="0" y="30" width="2560" height="1410" />
+    </state>
+    <state width="2529" height="494" key="GridCell.Tab.3.center/0.30.2560.1410@0.30.2560.1410" timestamp="1606063839473" />
+    <state width="2529" height="494" key="GridCell.Tab.3.left" timestamp="1606063839472">
+      <screen x="0" y="30" width="2560" height="1410" />
+    </state>
+    <state width="2529" height="494" key="GridCell.Tab.3.left/0.30.2560.1410@0.30.2560.1410" timestamp="1606063839472" />
+    <state width="2529" height="494" key="GridCell.Tab.3.right" timestamp="1606063839474">
+      <screen x="0" y="30" width="2560" height="1410" />
+    </state>
+    <state width="2529" height="494" key="GridCell.Tab.3.right/0.30.2560.1410@0.30.2560.1410" timestamp="1606063839474" />
+    <state x="899" y="431" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1605955404876">
+      <screen x="0" y="30" width="2560" height="1410" />
+    </state>
+    <state x="899" y="431" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.30.2560.1410@0.30.2560.1410" timestamp="1605955404876" />
+    <state x="943" y="353" width="672" height="678" key="search.everywhere.popup" timestamp="1606052042418">
+      <screen x="0" y="30" width="2560" height="1410" />
+    </state>
+    <state x="943" y="353" width="672" height="678" key="search.everywhere.popup/0.30.2560.1410@0.30.2560.1410" timestamp="1606052042418" />
+  </component>
+  <component name="XDebuggerManager">
+    <watches-manager>
+      <configuration name="JavascriptDebugType">
+        <watch expression="i" language="JavaScript" />
+        <watch expression="this.acceleration[i].get(0)" language="JavaScript" />
+        <watch expression="this.vitesse[i].get(1)" language="JavaScript" />
+        <watch expression="this.te * this.acceleration[i].get(0) + this.vitesse[i].get(1)" language="JavaScript" />
+      </configuration>
+    </watches-manager>
+  </component>
+</project>
